@@ -29,8 +29,12 @@ if st.button('Submit'):
 else: 
 	st.write('No buttons pushed')
 
-
-
+# validate
+# selected_block=st.sidebar.selectbox('Please Select Block: ', my_chain.chain)
+selected_idx=st.sidebar.selectbox('Please Select Block: ', range(len(my_chain.chain)))
+selected_block=my_chain.chain[selected_idx]
+if st.sidebar.button('Validate'): 
+	st.sidebar.write(selected_block.hash_block())
 
 st.write('\n')
 st.write('\n')
